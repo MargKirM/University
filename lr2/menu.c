@@ -5,9 +5,10 @@
 #include "sum_between.h"
 #include "sum_before_and_after.h"
 
-#define ARRAY_SIZE 10
+#define ARRAY_SIZE 100
 
 int main() {
+    int length = 0;
     int option;
     int array[ARRAY_SIZE];
     
@@ -16,12 +17,10 @@ int main() {
         scanf("%d", &(array[i]));
     }
 
-    // printf("Option = %d\n", option);
+    while ((scanf("%d", &(array[length])) == 1) && (length < ARRAY_SIZE)) {
+		length++;
+	}
     
-    // for(int i=0; i < ARRAY_SIZE; i++){
-    //     printf("value[%d] = %d\n", i, array[i]);
-    // }        
-
     switch (option) {
         case 0: 
             printf("%d\n", index_first_zero(array, ARRAY_SIZE));
