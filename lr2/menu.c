@@ -8,31 +8,27 @@
 #define ARRAY_SIZE 100
 
 int main() {
-    int length = 0;
     int option;
+    int length = 0;
     int array[ARRAY_SIZE];
     
     scanf("%d", &option);
-    for(int i = 0; i < ARRAY_SIZE; i++){
-        scanf("%d", &(array[i]));
-    }
-
     while ((scanf("%d", &(array[length])) == 1) && (length < ARRAY_SIZE)) {
 		length++;
-	}
-    
+    }
+
     switch (option) {
         case 0: 
-            printf("%d\n", index_first_zero(array, ARRAY_SIZE));
+            printf("%d\n", index_first_zero(array, length));
             return 0;
         case 1: 
-            printf("%d\n", index_last_zero(array, ARRAY_SIZE));
+            printf("%d\n", index_last_zero(array, length));
             return 0;
         case 2: 
-            printf("%d\n", sum_between(array, ARRAY_SIZE));
+            printf("%d\n", sum_between(array, length));
             return 0;
         case 3: 
-            printf("%d\n", sum_before_and_after(array, ARRAY_SIZE));
+            printf("%d\n", sum_before_and_after(array, length));
             return 0;
         default:
             printf("Данные некорректны\n");
